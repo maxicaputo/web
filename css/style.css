@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color:   #8d2a30  ;
+    --secondary-color: #dfd7d6;
+    --text-color: #000000;
+    --hover-color: #945900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header y Navegación */
+header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.img {
+    padding-left: 0;
+}
+
+.img img {
+    height: 70px;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 1.5rem 0;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Menú Hamburguesa */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/*departamento*/
+
+.departamentos {
+    background-color:  #511e21 ;
+    color: #ffffff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.departamentos h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.departamentos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.departamento {
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.departamento:hover {
+    transform: translateY(-5px);
+}
+
+.departamento img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.departamento h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.departamento p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.leer-mas {
+    background-color: #ffffff;
+    color: #8B0000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.leer-mas:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .departamento {
+        width: 100%;
+    }
+}
+
+
+/* Main Content */
+main {
+    padding-top: 70px; /* Ajustar según la altura del header */
+}
+
+/* Carrusel */
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Sección Quiénes Somos */
+.Fundacion {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.Fundacion h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.Fundacion h5 {
+    font-weight: 300;
+    text-align: justify;
+}
+
+
+/*icons*/
+.social-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-buttons a {
+    margin: 0 15px;
+    font-size: 40px;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-buttons a:hover {
+    color: #af2323; 
+}
+
+
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Media Queries para Responsividad */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 0;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background-color: var(--secondary-color);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    nav ul.active {
+        right: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 1rem 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active .line2 {
+        opacity: 0;
+    }
+
+    .hamburger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
